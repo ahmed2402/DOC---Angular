@@ -1,0 +1,65 @@
+<div class="card-body p-md-5 text-black">
+    <h3 class="mb-5 text-uppercase">Hospital Registration</h3>
+
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div data-mdb-input-init class="form-outline">
+          <input type="text" [ngModel] = "hospitalObj.hospitalName" id="form3Example1m" class="form-control form-control-lg" />
+          <label class="form-label" for="form3Example1m">Hospital name</label>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div data-mdb-input-init class="form-outline">
+          <input type="text" [ngModel] = "hospitalObj.hospitalContactNo" id="form3Example1n" class="form-control form-control-lg" />
+          <label class="form-label" for="form3Example1n">Contact No.</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div data-mdb-input-init class="form-outline">
+          <input type="text" [ngModel] = "hospitalObj.hospitalOwnerName" id="form3Example1m2" class="form-control form-control-lg" />
+          <label class="form-label" for="form3Example1m1">Owner name</label>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div data-mdb-input-init class="form-outline">
+              <input type="text" [ngModel] = "hospitalObj.hospitalOwnerContactNo" id="form3Example1m11" class="form-control form-control-lg" />
+              <label class="form-label" for="form3Example1m1">Owner Contact No.</label>
+            </div>
+            <div data-mdb-input-init class="form-outline">
+              <input type="text" [ngModel] = "hospitalObj.hospitalEmailId" id="form3Example1m111" class="form-control form-control-lg" />
+              <label class="form-label" for="form3Example1m1">Owner Email ID</label>
+            </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div data-mdb-input-init class="form-outline">
+          <input type="text" [ngModel] = "hospitalObj.hospitalCity" id="form3Example1n1" class="form-control form-control-lg" />
+          <label class="form-label" for="form3Example1n1">City</label>
+        </div>
+      </div>
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+      <input type="text" [ngModel] = "hospitalObj.hospitalAddress" id="form3Example8" class="form-control form-control-lg" />
+      <label class="form-label" for="form3Example8">Address</label>
+    </div>
+
+
+    <div data-mdb-input-init class="form-outline mb-4">
+      <input type="text" [ngModel] = "hospitalObj.userName" id="form3Example99" class="form-control form-control-lg" />
+      <label class="form-label" for="form3Example99">Username</label>
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+      <input type="password"  [ngModel] = "hospitalObj.password"  id="form3Example97" class="form-control form-control-lg" />
+      <label class="form-label" for="form3Example97">Password</label>
+    </div>
+
+    <div class="d-flex justify-content-end pt-3">
+      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">Reset all</button>
+      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-warning btn-lg ms-2" (click)="onRegister()">Submit form</button>
+    </div>
+
+  </div>
