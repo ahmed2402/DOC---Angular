@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ApiResponeModel, Hospital, User } from './core/classes/Hospital.mode';
 import { FormsModule } from '@angular/forms';
 import { HospitalService } from './core/services/hospital.service';
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, CommonModule],
+  imports: [RouterOutlet, FormsModule, CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -16,7 +16,7 @@ export class AppComponent {
 
   private hospitalService = inject(HospitalService)
 
-  constructor() {
+  constructor(private router : Router) {
     const loggedData = localStorage.getItem('practoLogin') ;
     if(loggedData != null ) {
       this.loggedHospitalData = JSON.parse(loggedData) ;
@@ -55,6 +55,7 @@ export class AppComponent {
   LogOut() {
     localStorage.removeItem('practoLogin') ;
     this.loggedHospitalData = new Hospital() ;
+    this.router.navigateByUrl('home') ;
   }
 
 }

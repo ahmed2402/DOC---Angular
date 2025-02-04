@@ -1,1 +1,103 @@
-<p>patient-list works!</p>
+<div class="row my-4 mx-5">
+    <div class="col-8">
+        <!-- <div class="row">
+           @for (item of appointmentList; track $index) {
+            <div class="col-3"> 
+     <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{item.name}}</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">{{item.mobileNo}}</h6>
+              <p class="card-text">{{item.naration}}</p>
+              <a href="#" class="card-link">{{item.appointmentDate}}- {{item.appointmentTime}}</a>
+              <a href="#" class="card-link">{{item.city}}</a>
+            </div>
+          </div>
+            </div>
+          }
+        </div> -->
+        <table class="table table-bordered table-dark table-striped  table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Sr.No</th>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">City</th>
+                <th scope="col">Mobile No.</th>
+              </tr>
+            </thead>
+              <tbody>
+                @for (item of patientList; track $index) { 
+                <tr>
+                 <td> {{$index+1}} </td>   
+                <td> {{item.name}} </td>
+                <td> {{item.age}} </td>
+                <td> {{item.gender}} </td>
+                <td> {{item.city}} </td>
+                <td> {{item.mobileNo}} </td>
+              </tr>
+                
+            }
+        </tbody> 
+          </table>
+        
+    </div>
+    <div class="col-4">
+        <div class="container">
+            <div class="card bg-dark text-white">
+              <div class="card-header bg-secondary text-white">
+                  Add Patient
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="name" class="form-label">
+                      <i class="bi bi-person text-light"></i> Enter Name
+                    </label>
+                    <input name="a12" type="text"  class="form-control bg-dark text-white" [(ngModel)] =  "newPatient.name" id="name" placeholder="Enter Name" />
+                  </div>
+          
+                  <div class="mb-3">
+                    <label for="mobile" class="form-label">
+                      <i class="bi bi-telephone text-light"></i> Enter Mobile No
+                    </label>
+                    <input name="a12" type="text" class="form-control bg-dark text-white" [(ngModel)] =  "newPatient.mobileNo" id="mobile" placeholder="Enter Mobile No" />
+                  </div>
+          
+                  <div class="mb-3">
+                    <label for="city" class="form-label">
+                      <i class="bi bi-geo-alt text-light"></i> Enter City
+                    </label>
+                    <input name="a12" type="text" class="form-control bg-dark text-white" [(ngModel)] =  "newPatient.city" id="city" placeholder="Enter City" />
+                  </div>
+          
+                  <div class="mb-3">
+                    <label for="age" class="form-label">
+                      <i class="bi bi-calendar text-light"></i> Enter Age
+                    </label>
+                    <input name="a12" type="number" class="form-control bg-dark text-white" [(ngModel)] =  "newPatient.age" id="age" placeholder="Enter Age" />
+                  </div>
+          
+                  <div class="mb-3">
+                    <label class="form-label">
+                      <i class="bi bi-person text-light"></i> Gender
+                    </label>
+                    <div>
+                      <input name="a12" type="radio" id="male" name="gender" [(ngModel)] =  "newPatient.gender" value="Male" />
+                      <label for="male">Male</label>
+                      <input name="a12" type="radio" id="female" name="gender"  [(ngModel)] = "newPatient.gender" value="Female" />
+                      <label for="female">Female</label>
+                    </div>
+                  </div>
+          
+                 <button type="submit" class="btn btn-success w-100" (click)="addPatient()">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+    </div>
+</div>
+
+
+  
